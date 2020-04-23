@@ -1,5 +1,86 @@
 
-// -- They give us an ARRAY called 'questions' What could we do with this (?) -- //
+//varibales declared for npms
+var inquirer = require("inquirer");
+var fs = require('fs');
+var axios = require('axios');
+
+//prompts for user input
+inquirer.prompt([
+    {
+        type: "input",
+        name: "gitUserName",
+        message: "What is your GitHub username?"
+    },
+    {
+        type: "input",
+        name: "gitAssociatedEmail",
+        message: "What is your email?"
+    },
+    {
+        type: "input",
+        name: "gitProjectUrl",
+        message: "What is your project's URL?"
+    },
+    {
+        type: "input",
+        name: "gitProjectName",
+        message: "What is your project's name?"
+    },
+    {
+        type: "input",
+        name: "gitProjectDesc",
+        message: "Please write a short description of your project"
+    },
+    {
+      type: "checkbox",
+      message: "What kind of license should your project have?",
+      name: "license",
+      choices: [
+        "GPL", 
+        "MIT", 
+        "Apache 2.0",
+        "none" 
+      ]
+    },
+    {
+        type: "input",
+        name: "installDepends",
+        message: "What command should be run to install dependencies?"
+    },
+    {
+        type: "input",
+        name: "runTests",
+        message: "What command should be run to run tests?"
+    },
+    {
+        type: "input",
+        name: "aboutRepo",
+        message: "what does the user need to know about using the repo?"
+    },
+    {
+        type: "input",
+        name: "contributeToRepo",
+        message: "What does the user need to know about contributing to the repo?"
+    }
+
+]).then(function(data) {
+    console.log(data.gitUserName)
+    console.log(data.gitAssociatedEmail)
+    console.log(data.gitProjectUrl)
+    console.log(data.gitProjectName)
+    console.log(data.gitProjectDesc)
+    console.log(data.activities)
+    console.log(data.license)
+    console.log(data.installDepends)
+    console.log(data.runTests)
+    console.log(data.aboutRepo)
+    console.log(data.contributeToRepo)
+  
+    });
+    
+
+
+/*// -- They give us an ARRAY called 'questions' What could we do with this (?) -- //
 const questions = [
 
 ];
@@ -31,3 +112,7 @@ init();
 //step 2: before cloning the repo, user runs readme-maker files in terminal and answers questions 
 //step 3: answers get handled/formatted/ and written to the git repo in git automatically
 //step 4: user can clone repo locally and already populated readme gets pulled down with first clone
+
+
+
+*/
